@@ -1,0 +1,43 @@
+#button {
+    background-color: #CD1E50;
+    color: white;
+    border-radius: 35px;
+}
+#button:active {
+    transform: translateY(2px);
+}
+#button:hover {
+    color: white;
+    background-color: #a32146;
+}
+#a {
+    color: #CD1E50;
+}
+
+#input {
+    background-color: transparent;
+    width: 90%;
+    margin: auto;
+    transition: 1s;
+    outline: none;
+    text-align: center;
+}
+#input:active {
+    outline: none;
+}
+#input:focus {
+    background-color: transparent;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    transform: translateY(3px);
+    outline: none;
+}
+input::placeholder {
+    color: #CD1E50;
+}
+#label {
+    margin-bottom: 1%;
+    color: #CD1E50;
+    margin-left:5%;
+}

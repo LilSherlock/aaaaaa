@@ -1,6 +1,6 @@
 <link href="{{ asset('css/register.css') }}" rel="stylesheet">
 <x-guest-layout>
-    <x-jet-authentication-card class="card shadow-xl">
+    <x-jet-authentication-card class="card" id="card">
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
@@ -9,23 +9,27 @@
         <form method="POST" action="{{ route('register') }}" autocomplete="off">
             @csrf
             <div class="flex flex-col mb-4">
-                <x-jet-label for="name" value="{{ __('¿Cual es tu nombre?') }}" />
-                <input class="border-black-90 rounded-md py-2 px-3 text-grey-darkest focus:outline-none focus:shadow-outline focus:border-blue-100" type="text" name="name" placeholder="Ingresa tu nombre"  required id="input">
+                <x-jet-label for="name" value="{{ __('Nombre') }}" id="label"/>
+                <input class="shadow-md border-transparent rounded-md py-2 px-3 focus:outline-none focus:border-blue-100 focus:outline-none" type="text" name="name" placeholder="Ingresa tu nombre"  required id="input">
             </div>
 
-            <div class="mb-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full " type="email"  placeholder="Ingresa tu email" name="email" :value="old('email')" required />
+            <div class="flex flex-col mb-4">
+                <x-jet-label for="email" value="{{ __('Email') }}" id="label" />
+                <input class="shadow-md border-transparent rounded-md py-2 px-3 focus:outline-none focus:border-blue-100 focus:shadow-none" type="text" name="email" placeholder="Ingresa tu email"  required id="input">
+            </div>
+            <div class="flex flex-col mb-4">
+                <x-jet-label for="phone" value="{{ __('Celular') }}" id="label" />
+                <input class="shadow-md border-transparent rounded-md py-2 px-3 focus:outline-none focus:border-blue-100 focus:shadow-none" type="text" name="phone" placeholder="Ingresa tu celular"  required id="input">
             </div>
 
-            <div class="mb-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" placeholder="Ingresa tu password" name="password" required autocomplete="new-password"/>
+            <div class="flex flex-col mb-4">
+                <x-jet-label for="password" value="{{ __('Contraseña') }}" id="label"/>
+                <input class="shadow-md border-transparent rounded-md py-2 px-3 focus:outline-none focus:border-blue-100 focus:shadow-none" type="password" name="password" placeholder="Ingresa tu contraseña"  required id="input">
             </div>
 
-            <div class="mb-4" >
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+            <div class="flex flex-col mb-4">
+                <x-jet-label for="password_confirmation" value="{{ __('Confirma tu contraseña') }}" id="label"/>
+                <input class="shadow-md border-transparent rounded-md py-2 px-3 focus:outline-none focus:border-blue-100 focus:shadow-none" type="password" name="password_confirmation" placeholder="Contraseña"  required id="input">
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
@@ -50,7 +54,7 @@
                     {{ __('¿Ya estas registrado?') }}
                 </a>
 
-                <x-jet-button class="ml-4" id="button">
+                <x-jet-button class="ml-4 shadow-md" id="button">
                     {{ __('Register') }}
                 </x-jet-button>
             </div>

@@ -14,8 +14,13 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
+        colors: {
+            'quinaya': '#CD1E50',
+          },
     },
-
+    corePlugins: {
+        outline: false,
+    },
     variants: {
         extend: {
             opacity: ['disabled'],
