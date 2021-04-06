@@ -20,7 +20,7 @@
     margin: auto;
     transition: 1s;
     outline: none;
-    text-align: center;
+    text-align: left;
 }
 #input:active {
     outline: none;
@@ -29,7 +29,7 @@
     background-color: transparent;
     width: 100%;
     margin: auto;
-    text-align: center;
+    text-align: left;
     transform: translateY(3px);
     outline: none;
 }
@@ -37,7 +37,8 @@ input::placeholder {
     color: #CD1E50;
 }
 #label {
-    margin-bottom: 1%;
+    margin-bottom: 3%;
     color: #CD1E50;
     margin-left:5%;
+    text-align: center;
 }
